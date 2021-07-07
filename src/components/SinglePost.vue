@@ -1,0 +1,22 @@
+<template>
+  <div class="post">
+    <h2>{{ post.title }}</h2>
+    <p>{{ snippet }}</p>
+  </div>
+</template>
+
+<script>
+import { computed } from "@vue/runtime-core";
+
+export default {
+  props: ["post"],
+  setup(props) {
+    const snippet = computed(() => {
+      return props.post.text.substring(0, 100) + "....";
+    });
+    return { snippet };
+  },
+};
+</script>
+
+<style></style>
