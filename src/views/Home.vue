@@ -29,7 +29,9 @@ export default {
     });
 
     const matchingNames = computed(() => {
-      return names.value.filter((name) => name.includes(search.value.trim()));
+      return names.value.filter((name) =>
+        name.toLowerCase().includes(search.value.trim().toLowerCase())
+      );
     });
 
     const stopAllWatch = () => {
